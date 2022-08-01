@@ -61,7 +61,7 @@ Breaking from the loop results in puts("Invalid Character") and exit(-1), which 
 
 So how do we make sure we don't exit the loop and can call our shellcode?
 
-For the first condition - we need the counter to be greater than equal to the length of our shellcode
+For the first condition - we need the counter to be greater than or equal to the length of our shellcode
 
 For the second condition - in order to not exit the loop `*(alloc + counter) & 1 ` needs to *not* equal 0
 
@@ -87,7 +87,7 @@ So we know what input we need to give this process, and based on the fact that t
 
 ### Strategy
 - - -
-Crafting shellcode to give a shell that only uses odd bytes sounds tedious and I'm lazy, and I know a common technique for shellcoding is to have two stages of payload, the first which performs a read from stdin to receive the second stage, and the second stage which will give us a shell
+Crafting shellcode to give a shell that only uses odd bytes sounds tedious and I'm lazy, and I know a common technique for shellcoding is to have two stages of payload, the first which performs a read from stdin to receive the second stage, and the second stage which will give us a shell, luckily this is possible because the allocation for our shellcode has write permissions so we can write and overwrite whatever memory we want in that allocation within our shellcode
 
 The purpose of this is to dodge the input restrictions from the process, rather than having to get a shell with only odd bytes, we only have to make a read syscall with odd bytes, which is significantly easier!
 
