@@ -45,7 +45,7 @@ The first thing I recognize is the string "Display your oddities:" that is print
 
 The next line is an mmap instruction, which is allocating 0x1000 bytes of memory at address 0x123412340000 and is followed by a check to make sure the mmap succeeded 
 
-After that is an 0x800 byte read into rax, which holds the address of the mmaped memory, and a conditional to check if the last byte of what was read is a newline character (0xa) and replace it with a null byte if it was, it also sets some
+After that is an 0x800 byte read into rax, which holds the address of the mmaped memory, and a conditional to check if the last byte of what was read is a newline character (0xa) and replace it with a null byte if it was
 
 Next up is an infinite loop with two conditions, the first condition calls whatever instructions are at rax (the address of our input which was read into the mmapped allocation) and the second which breaks from the loop
 
