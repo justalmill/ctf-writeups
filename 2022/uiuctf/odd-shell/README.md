@@ -217,3 +217,5 @@ Display your oddities:
 $ cat /flag
 uiuctf{5uch_0dd_by4t3s_1n_my_r3g1st3rs!}
 ```
+
+Thank you!
