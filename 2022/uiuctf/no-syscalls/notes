@@ -1,0 +1,9 @@
+
+r13 is main on shellcode entry
+0x5555555551c9 - 0x555555558040 = 0x2e77
+main + 0x2e77 == flag
+
+Leaked instr:
+<CsInsn 0x0 [488d356f2e0000]: lea rsi, [rip + 0x2e6f]>
+
+uiuctf{timing-is-everything}

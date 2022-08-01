@@ -1,0 +1,6 @@
+python process
+create pipe for stdout
+run process with stdout redirected to pipe
+read from pipe in script
+calculate result
+send result to stdin fd of process?
